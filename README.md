@@ -75,7 +75,7 @@ Keep in mind that just before 'make' command inside this script there should be 
 
  ## Cross-Compiling Kernel Module For Buildroot Linux running on RISC-V:
 
- We have created a simple kernel module and executed it and this is a good practice to understand the kernel module development. We need to install cross-compilation tools to compile a kernel module for our target architecture RISC-V. The following command is used to install the required cross-compilation toolchain: 
+We have created a simple kernel module and executed it and this is a good practice to understand the kernel module development. We need to install cross-compilation tools to compile a kernel module for our target architecture RISC-V. The following command is used to install the required cross-compilation toolchain: 
  ```
 sudo apt-get update
 sudo apt-get install gcc-riscv64-linux-gnu
@@ -94,7 +94,7 @@ clean:
 
  ```
 
-<path-to-buildroot-kernel> : as an example, this path should be as following: '/home/user/Desktop/qemu/buildroot/output/build/linux-6.1.44 '  the 'user' and the Linux version may be different on your project, so check it accordingly. This is the Linux version of Buildroot. 
+**path-to-buildroot-kernel**: as an example, this path should be as following: '/home/user/Desktop/qemu/buildroot/output/build/linux-6.1.44 '  the 'user' and the Linux version may be different on your project, so check it accordingly. This is the Linux version of Buildroot. 
 
 Save the Makefile file, and use again the 'make' command so that you compile. Then you will see multiple files created including hello.ko specifically crosscompiled for our new Buildroot-Linux development environment running on RISC-V architecture. You might question how this kernel module hello.ko is loaded to our development environment. Here are the steps:
 
