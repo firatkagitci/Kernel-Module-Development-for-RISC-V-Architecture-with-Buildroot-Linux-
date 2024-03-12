@@ -3,7 +3,7 @@ This repo is prepared to explain how to create the development environment as Bu
 
 This project is done on an Ubuntu host (version 23.10), which is a virtual machine created on the Virtual Box software, by Oracle. For instructions on setting this environment visit ubuntu.com and virtualbox.org. The commands here are compatible with Ubuntu/Debian-based platforms, that's why make sure you also use the same system. 
 
-The first step is installing Qemu from the git repository and boeforehand making sure you have necessary toolchains and dependencies:
+The first step is installing Qemu from the git repository and beforehand making sure you have the necessary toolchains and dependencies:
 Installing dependencies:
 `sudo apt-get update
 sudo apt-get install -y build-essential git ncurses-dev bison flex libssl-dev make gcc
@@ -29,8 +29,27 @@ The last mae command might take some long time , possibly more than 30 minutes s
 
 After the kernel compilation command 'make' you will see the image files inside /buildroot/output directory path. Go to the /images directory and execute the file named start-qemu.sh by adding ./ to the beginning: `./start-qemu.sh`
 
-This will boot the system with OpenSbi, and your Buildroot system will start. The password is 'root' and keep in mind that this systems does not have a GUI(Graphical User Interface), meaning you will have to use the command line to interact with the new system we just created.
+This will boot the system with OpenSbi, and your Buildroot system will start. The password is 'root' and keep in mind that this system does not have a GUI(Graphical User Interface), meaning you will have to use the command line to interact with the new system we just created.
 
 Cross-compilation of a kernel module:
-It is highly suggested that you start with a simple kernel module to test your system, in our case we will create a kernel module that gives a message as 'Hello World'. First you test it on your host machine Ubuntu. 
+It is highly suggested that you start with a simple kernel module to test your system, in our case we will create a kernel module that gives a message as 'Hello World'. First, you test it on your host machine Ubuntu. 
 
+simple kernel module 'hello.c':
+`#include <linux/module.h>
+#include <linux/kernel.h>
+
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("Your Name");
+MODULE_DESCRIPTION("A simple hello world kernel module");
+
+static int __init hello_init(void) {
+    printk(KERN_INFO "Hello, world!\n");
+    return 0; // Non-zero return means that the module couldn't be loaded.
+}
+
+static void __exit hello_cleanup(void) {
+    printk(KERN_INFO "Cleaning up module.\n");
+}
+
+module_init(hello_init);
+module_exit(hello_cleanup);`
