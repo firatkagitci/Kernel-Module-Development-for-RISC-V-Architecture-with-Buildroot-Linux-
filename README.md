@@ -1,0 +1,2 @@
+# Kernele-Module-Developement-for-RISC-V-Architecture-with-Buildroot-Linux-
+This repo is preapared to explain how to create the development environment as buildroot runnin on QEMU emulating RISC-V architecture. We basically create a kernel on our ubuntu host machine and use cross-compliation which is a toolchain you add to your host to translate the kernel module you develop on your Ubuntu host to the target Buildroot. 
