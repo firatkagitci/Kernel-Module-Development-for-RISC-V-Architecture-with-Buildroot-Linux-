@@ -13,8 +13,6 @@ sudo apt install ninja-build
 sudo apt-get install pkg-config
 sudo apt-get install libglib2.0-dev
 sudo apt-get install libpixman-1-dev
-
-
 ```
 **Warning:** In case you still encounter any dependency errors which is highly possible, read the error messages and install the required dependent tools indicated in the errors.
 ```
@@ -38,7 +36,7 @@ make
 
 The last make command might take a long time, possibly more than 30 minutes since it compiles the entire kernel of the target system.
 
-After the kernel compilation command 'make' you will see the image files inside /buildroot/output directory path. Go to the /images directory and execute the file named start-qemu.sh by adding ./ to the beginning: `./start-qemu.sh`
+After the kernel compilation command 'make' you will see the image files inside `/buildroot/output` directory path. Go to the `/images` directory and execute the file named start-qemu.sh by adding ./ to the beginning: `./start-qemu.sh`
 
 This will boot the system with OpenSbi, and your Buildroot system will start. The password is 'root' and keep in mind that this system does not have a GUI(Graphical User Interface), meaning you will have to use the command line to interact with the new system we just created.
 
@@ -104,20 +102,22 @@ clean:
 
 Save the Makefile file, and use again the 'make' command so that you compile. Then you will see multiple files created including hello.ko specifically crosscompiled for our new Buildroot-Linux development environment running on RISC-V architecture. You might question how this kernel module hello.ko is loaded to our development environment. Here are the steps:
 
-Go to /qemu/buildroot, inside create a directory named as you wish (or name it 'overlay' for compatibility), inside create another path that is the same as in the target development environment environment (e.g.  /lib/modules/6.1.44/extra)
+Go to `/qemu/buildroot`, inside create a directory named as you wish (or name it as `overlay` for compatibility), inside create another path that is the same as in the target development environment environment (e.g.  `/lib/modules/6.1.44/extra`)
 
-'mkdir -p overlay/lib/modules/6.1.44/extra/' The -p flag ensures that mkdir creates all necessary parent directories that do not exist.
+`mkdir -p overlay/lib/modules/6.1.44/extra/ ` The -p flag ensures that mkdir creates all necessary parent directories that do not exist.
 
 This path is the path to your kernel header on your target environment. The version of the kernel header may be different on your project, so, again check accordingly. 
 
-After doing this, inside /qemu/buildroot directory you need to run 'make menucofig' which opens a text-based GUI. Keep in mind that this interface works with a dependency, so run the following command to resolve it if you receive an error: `sudo apt-get install libncurses5-dev libncursesw5-dev`
+After doing this, inside `/qemu/buildroot` directory you need to run `make menuconfig` which opens a text-based GUI. Keep in mind that this interface works with a dependency, so run the following command to resolve it if you receive an error: `sudo apt-get install libncurses5-dev libncursesw5-dev`
 
 
-Configure Buildroot to Use the Overlay: You need to tell Buildroot to use this overlay directory when building the root filesystem image. This can be done in the Buildroot configuration:
+**Configure Buildroot to Use the Overlay:** You need to tell Buildroot to use this overlay directory when building the root filesystem image. This can be done in the Buildroot configuration:
 
-Run 'make menuconfig' within your Buildroot directory.
+Run `make menuconfig ` within your Buildroot directory.
 Navigate to System configuration > Root filesystem overlay directories.
 Add the path to your 'overlay' directory. If you named your directory overlay and it's located in the root of your Buildroot directory, the path would simply be overlay.
 Save and exit the configuration menu.
 
-Then run 'make'
+Then run 'make' inside `/buildroot` 
+
+To see if the kernel module is loaded to Buildroot, start the Buildroot by executing the following commands inside 
