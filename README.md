@@ -64,9 +64,26 @@ all:
 clean:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
 
- Save the Makefile and use 'make' command to compile this C code to create a kernel module. After that you will see multiple files created including hello.ko which is the kernel module created for the Ubuntu host. Now that we have the kernel module, we can add it to our main kernel by using the command 'sudo insmod hello.ko' , now you need to run 'dmesg' command to see its effect on the kernel messages prompt as "Hello, World!" message. 
+ Keep in mind that just before 'make' command inside this script there should be a 'tab' written as space. Save the Makefile and use 'make' command to compile this C code to create a kernel module. After that, you will see multiple files created including hello.ko which is the kernel module created for the Ubuntu host. Now that we have the kernel module, we can add it to our main kernel by using the command 'sudo insmod hello.ko', now you need to run 'dmesg' command to see its effect on the kernel messages prompt as "Hello, World!" message. 
 
- Kernel Module For Buildroot Linux
- We have created a simple kernel module and executed it and this is a good practice to understand the kernel module developement. 
+ Kernel Module For Buildroot Linux:
+
+ We have created a simple kernel module and executed it and this is a good practice to understand the kernel module development. We need to install cross-compilation tools to compile a kernel module for our target architecture RISC-V. The following command is used to install the required cross-compilation tool: `sudo apt-get update, sudo apt-get install gcc-riscv64-linux-gnu`
+
+ Create another directory for kernel modules Buildroot RISC-V based system. name it as you wish(e.g. kmodules_target)
+
+ Inside create the same hello.c, and create a new Makefile file. Inside the new Makefile write the following script:
+
+
+ obj-m += hello.o
+all:
+	make ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- -C <path-to-buildroot-kernel> M=$(PWD) modules
+
+clean:
+	make ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- -C <path-to-buildroot-kernel> M=$(PWD) clean
+
+
  
 
+
+ 
