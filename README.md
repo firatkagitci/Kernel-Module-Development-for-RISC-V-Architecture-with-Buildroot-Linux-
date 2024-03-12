@@ -102,5 +102,7 @@ Configure Buildroot to Use the Overlay: You need to tell Buildroot to use this o
 
 Run 'make menuconfig' within your Buildroot directory.
 Navigate to System configuration > Root filesystem overlay directories.
-Add the path to your overlay directory. If you named your directory overlay and it's located in the root of your Buildroot directory, the path would simply be overlay.
+Add the path to your 'overlay' directory. If you named your directory overlay and it's located in the root of your Buildroot directory, the path would simply be overlay.
 Save and exit the configuration menu.
+
+Then run 'make'
