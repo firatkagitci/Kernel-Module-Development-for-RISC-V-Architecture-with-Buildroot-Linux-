@@ -95,7 +95,7 @@ Go to /qemu/buildroot , inside create a directory named as you wish (or name it 
 
 This path is the path to your kernel header on your target environment. The version of the kernel header may be different on your project, so, again check accordingly. 
 
-After doing this, inside /qemu/buildroot directory you need to run 'make menucofig' whuch opens a text based GUI. Keep in mind that this interface works with a dependency, so run the following command: `sudo apt-get install libncurses5-dev libncursesw5-dev`
+After doing this, inside /qemu/buildroot directory you need to run 'make menucofig' which opens a text-based GUI. Keep in mind that this interface works with a dependency, so run the following command to resolve it if you receive an error: `sudo apt-get install libncurses5-dev libncursesw5-dev`
 
 
 Configure Buildroot to Use the Overlay: You need to tell Buildroot to use this overlay directory when building the root filesystem image. This can be done in the Buildroot configuration:
