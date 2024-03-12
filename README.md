@@ -9,6 +9,8 @@ Installing dependencies:
 ```
 sudo apt-get update
 sudo apt-get install -y build-essential git ncurses-dev bison flex libssl-dev make gcc
+sudo apt install ninja-build
+sudo apt-get install pkg-config
 ```
 **Warning:** In case you still encounter any dependency errors which is highly possible, read the error messages and install the required dependent tools indicated in the errors.
 ```
