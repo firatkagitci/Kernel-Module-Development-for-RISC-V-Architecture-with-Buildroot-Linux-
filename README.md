@@ -32,10 +32,10 @@ After the kernel compilation command 'make' you will see the image files inside 
 This will boot the system with OpenSbi, and your Buildroot system will start. The password is 'root' and keep in mind that this system does not have a GUI(Graphical User Interface), meaning you will have to use the command line to interact with the new system we just created.
 
 Cross-compilation of a kernel module:
-It is highly suggested that you start with a simple kernel module to test your system, in our case we will create a kernel module that gives a message as 'Hello World'. First, you test it on your host machine Ubuntu. 
+It is highly suggested that you start with a simple kernel module to test your system, in our case we will create a kernel module that gives a message as 'Hello World'. First, you test it on your host machine Ubuntu. Create a seperate directory and name it as you wish (e.g. kmodules) and create the hello.c file ('touch hello.c') .
 
 simple kernel module 'hello.c':
-`#include <linux/module.h>
+#include <linux/module.h>
 #include <linux/kernel.h>
 
 MODULE_LICENSE("GPL");
@@ -52,4 +52,21 @@ static void __exit hello_cleanup(void) {
 }
 
 module_init(hello_init);
-module_exit(hello_cleanup);`
+module_exit(hello_cleanup);
+
+
+To compile the hello.c code we need to use a Makefile file that includes the following script: 
+
+obj-m += hello.o
+all:
+	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
+
+clean:
+	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+
+ Save the Makefile and use 'make' command to compile this C code to create a kernel module. After that you will see multiple files created including hello.ko which is the kernel module created for the Ubuntu host. Now that we have the kernel module, we can add it to our main kernel by using the command 'sudo insmod hello.ko' , now you need to run 'dmesg' command to see its effect on the kernel messages prompt as "Hello, World!" message. 
+
+ Kernel Module For Buildroot Linux
+ We have created a simple kernel module and executed it and this is a good practice to understand the kernel module developement. 
+ 
+
