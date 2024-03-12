@@ -3,7 +3,7 @@ This repo is prepared to explain how to create the development environment as Bu
 
 This project is done on an Ubuntu host (version 23.10), which is a virtual machine created on the Virtual Box software, by Oracle. For instructions on setting this environment visit ubuntu.com and virtualbox.org. The commands here are compatible with Ubuntu/Debian-based platforms, that's why make sure you also use the same system. 
 
-The first step is installing Qemu from the git repository and boeforehand make sure you have necessary toolchanics and dependencies:
+The first step is installing Qemu from the git repository and boeforehand making sure you have necessary toolchains and dependencies:
 Installing dependencies:
 `sudo apt-get update
 sudo apt-get install -y build-essential git ncurses-dev bison flex libssl-dev make gcc
