@@ -91,4 +91,16 @@ Save the Makefile file, and use again the 'make' command so that you compile. Th
 Go to /qemu/buildroot , inside create a directory named as you wish (or name it 'overlay' for compatibility), inside create another path that is the same as in the target development environment environment
 /lib/modules/6.1.44/extra
 
+'mkdir -p overlay/lib/modules/6.1.44/extra/' The -p flag ensures that mkdir creates all necessary parent directories that do not exist.
+
 This path is the path to your kernel header on your target environment. The version of the kernel header may be different on your project, so, again check accordingly. 
+
+After doing this, inside /qemu/buildroot directory you need to run 'make menucofig' whuch opens a text based GUI. Keep in mind that this interface works with a dependency, so run the following command: `sudo apt-get install libncurses5-dev libncursesw5-dev`
+
+
+Configure Buildroot to Use the Overlay: You need to tell Buildroot to use this overlay directory when building the root filesystem image. This can be done in the Buildroot configuration:
+
+Run 'make menuconfig' within your Buildroot directory.
+Navigate to System configuration > Root filesystem overlay directories.
+Add the path to your overlay directory. If you named your directory overlay and it's located in the root of your Buildroot directory, the path would simply be overlay.
+Save and exit the configuration menu.
