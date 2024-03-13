@@ -126,7 +126,9 @@ Navigate to System configuration > Root filesystem overlay directories.
 Add the path to your 'overlay' directory. If you named your directory overlay and it's located in the root of your Buildroot directory, the path would simply be overlay.
 Save and exit the configuration menu.
 
-Then run 'make' inside `/buildroot` 
+![menuconfig](https://github.com/firatkagitci/Kernel-Module-Development-for-RISC-V-Architecture-with-Buildroot-Linux-/assets/72497084/f4c2b4dd-74d0-4704-a61e-fdbfa6a2b23b)
+
+Then run `make` inside `/buildroot` 
 
 To see if the kernel module is loaded to Buildroot, start the Buildroot by executing the command `./start-qemu.sh` inside `/buildroot/output/images/ `. then the Buildroot system will start, you need to check the directory `/lib/modules/6.1.44/extra/`, there you should see the loaded kernel module. You can insert this kernel module to the running kernel by using `insmod hello.ko` command, then if you use `dmesg` command you will see as an output the "Hello, World!" message. This means you have successfully cross-compiled a kernel module, added it to your target system, and then inserted it into the running kernel. 
 
