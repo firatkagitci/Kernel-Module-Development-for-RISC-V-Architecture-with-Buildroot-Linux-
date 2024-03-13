@@ -125,6 +125,7 @@ Run `make menuconfig ` within your Buildroot directory.
 **Navigate to System configuration > Root filesystem overlay directories.**
 Add the path to your `overlay` directory. If you named your directory overlay and it's located in the root of your Buildroot directory, the path would simply be overlay.
 Save and exit the configuration menu.
+![menuconfig1](https://github.com/firatkagitci/Kernel-Module-Development-for-RISC-V-Architecture-with-Buildroot-Linux-/assets/72497084/4368e505-9d40-4866-a591-3cab16dcd5db)
 
 ![menuconfig](https://github.com/firatkagitci/Kernel-Module-Development-for-RISC-V-Architecture-with-Buildroot-Linux-/assets/72497084/f4c2b4dd-74d0-4704-a61e-fdbfa6a2b23b)
 
