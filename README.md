@@ -40,7 +40,10 @@ After the kernel compilation command 'make' you will see the image files inside 
 
 This will boot the system with OpenSbi, and your Buildroot system will start. The password is 'root' and keep in mind that this system does not have a GUI(Graphical User Interface), meaning you will have to use the command line to interact with the new system we just created. The password: root.
 
-![Buildroot](https://github.com/firatkagitci/Kernel-Module-Development-for-RISC-V-Architecture-with-Buildroot-Linux-/assets/72497084/67197553-e3dd-48fe-b204-7615cf447baa)
+![start](https://github.com/firatkagitci/Kernel-Module-Development-for-RISC-V-Architecture-with-Buildroot-Linux-/assets/72497084/05354552-411d-481c-932a-9a34cb39c1a0)
+
+---
+
 
 
 ## Creating Kernel Module For Ubuntu Host:
