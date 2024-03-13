@@ -121,4 +121,16 @@ Save and exit the configuration menu.
 
 Then run 'make' inside `/buildroot` 
 
-To see if the kernel module is loaded to Buildroot, start the Buildroot by executing the following commands inside 
+To see if the kernel module is loaded to Buildroot, start the Buildroot by executing the command `./start-qemu.sh` inside `/buildroot/output/images/ `. then the Buildroot system will start, you need to check the directory `/lib/modules/6.1.44/extra/`, there you should see the loaded kernel module. You can insert this kernel module to the running kernel by using `insmod hello.ko` command, then if you use `dmesg` command you will see as an output the "Hello, World!" message. This means you have successfully cross-compiled a kernel module, added it to your target system, and then inserted it into the running kernel. 
+
+
+Until now we have practiced and learned:
+- How to set the development environment Buildroot-Linux running on RISC-V architecture
+- How to create a kernel module
+- How to cross-compile a kernel module
+- Adding the kernel module to the target system of Buildroot-Linux running on RISC-V architecture
+
+These steps are also helpful in creating the cryptographic kernel module which is explained here as follows.
+
+# SHA-256 Crypto Development
+to be continued...
