@@ -98,9 +98,9 @@ clean:
 
  ```
 
-**path-to-buildroot-kernel**: as an example, this path should be as following: '/home/user/Desktop/qemu/buildroot/output/build/linux-6.1.44 '  the 'user' and the Linux version may be different on your project, so check it accordingly. This is the Linux version of Buildroot. 
+**path-to-buildroot-kernel**: as an example, this path should be like the following: `/home/user/Desktop/qemu/buildroot/output/build/linux-6.1.44`  the 'user' and the Linux version(on Buildroot) may be different on your project, so check it and modify accordingly.
 
-Save the Makefile file, and use again the 'make' command so that you compile. Then you will see multiple files created including hello.ko specifically crosscompiled for our new Buildroot-Linux development environment running on RISC-V architecture. You might question how this kernel module hello.ko is loaded to our development environment. Here are the steps:
+Save the Makefile file, and use again the `make` command so that you compile. Then you will see multiple files created including hello.ko specifically crosscompiled for our new Buildroot-Linux development environment running on RISC-V architecture. **You might question how this kernel module hello.ko is loaded to our development environment. ** Here are the steps:
 
 Go to `/qemu/buildroot`, inside create a directory named as you wish (or name it as `overlay` for compatibility), inside create another path that is the same as in the target development environment environment (e.g.  `/lib/modules/6.1.44/extra`)
 
