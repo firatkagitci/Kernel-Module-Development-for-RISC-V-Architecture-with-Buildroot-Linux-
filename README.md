@@ -74,6 +74,7 @@ all:
 clean:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
 ```
+Here `uname -r` command gives the kernel header name of the system.
 
 Keep in mind that just before 'make' command inside this script there should be a 'tab' sized space. Save the Makefile and use 'make' command to compile this C code to create a kernel module. After that, you will see multiple files created including hello.ko which is the kernel module created for the Ubuntu host. Now that we have the kernel module, we can add it to our main kernel by using the command 'sudo insmod hello.ko', now you need to run 'dmesg' command to see its effect on the kernel messages prompt as "Hello, World!" message. 
 
