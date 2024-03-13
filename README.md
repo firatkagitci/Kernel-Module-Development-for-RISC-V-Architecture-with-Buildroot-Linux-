@@ -122,8 +122,8 @@ After doing this, inside `/qemu/buildroot` directory you need to run `make menuc
 **Configure Buildroot to Use the Overlay:** You need to tell Buildroot to use this overlay directory when building the root filesystem image. This can be done in the Buildroot configuration:
 
 Run `make menuconfig ` within your Buildroot directory.
-Navigate to System configuration > Root filesystem overlay directories.
-Add the path to your 'overlay' directory. If you named your directory overlay and it's located in the root of your Buildroot directory, the path would simply be overlay.
+**Navigate to System configuration > Root filesystem overlay directories.**
+Add the path to your `overlay` directory. If you named your directory overlay and it's located in the root of your Buildroot directory, the path would simply be overlay.
 Save and exit the configuration menu.
 
 ![menuconfig](https://github.com/firatkagitci/Kernel-Module-Development-for-RISC-V-Architecture-with-Buildroot-Linux-/assets/72497084/f4c2b4dd-74d0-4704-a61e-fdbfa6a2b23b)
