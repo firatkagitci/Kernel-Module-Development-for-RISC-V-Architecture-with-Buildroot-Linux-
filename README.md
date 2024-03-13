@@ -44,6 +44,7 @@ This will boot the system with OpenSbi, and your Buildroot system will start. Th
 
 ---
 
+![start1](https://github.com/firatkagitci/Kernel-Module-Development-for-RISC-V-Architecture-with-Buildroot-Linux-/assets/72497084/fb920b34-cd7c-421a-8565-b8c51b3cc131)
 
 
 ## Creating Kernel Module For Ubuntu Host:
