@@ -38,7 +38,10 @@ The last make command might take a long time, possibly more than 30 minutes sinc
 
 After the kernel compilation command 'make' you will see the image files inside `/buildroot/output` directory path. Go to the `/images` directory and execute the file named start-qemu.sh by adding ./ to the beginning: `./start-qemu.sh`
 
-This will boot the system with OpenSbi, and your Buildroot system will start. The password is 'root' and keep in mind that this system does not have a GUI(Graphical User Interface), meaning you will have to use the command line to interact with the new system we just created.
+This will boot the system with OpenSbi, and your Buildroot system will start. The password is 'root' and keep in mind that this system does not have a GUI(Graphical User Interface), meaning you will have to use the command line to interact with the new system we just created. The password: root.
+
+![Buildroot](https://github.com/firatkagitci/Kernel-Module-Development-for-RISC-V-Architecture-with-Buildroot-Linux-/assets/72497084/67197553-e3dd-48fe-b204-7615cf447baa)
+
 
 ## Creating Kernel Module For Ubuntu Host:
 It is highly suggested that you start with a simple kernel module to test your system, in our case we will create a kernel module that gives a message as 'Hello World'. First, you test it on your host machine Ubuntu. Create a separate directory and name it as you wish (e.g. kmodules) and create the hello.c file ('touch hello.c').
