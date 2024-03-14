@@ -114,6 +114,8 @@ Go to `/qemu/buildroot`, inside create a directory named as you wish (or name it
 
 `mkdir -p overlay/lib/modules/6.1.44/extra/ ` The -p flag ensures that mkdir creates all necessary parent directories that do not exist.
 
+Then copy the kernel module 'hello.ko' to `/lib/modules/6.1.44/extra` directory.
+
 This path is the path to your kernel header on your target environment. The version of the kernel header may be different on your project, so, again check accordingly. 
 
 After doing this, inside `/qemu/buildroot` directory you need to run `make menuconfig` which opens a text-based GUI. Keep in mind that this interface works with a dependency, so run the following command to resolve it if you receive an error: `sudo apt-get install libncurses5-dev libncursesw5-dev`
