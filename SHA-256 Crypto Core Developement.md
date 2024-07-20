@@ -394,14 +394,14 @@ Add the header file of cryypto core as shown below.
 
 ```c
 
-#include "chardev/char.h"
-#include "sysemu/arch_init.h"
-#include "sysemu/device_tree.h"
-#include "sysemu/sysemu.h"
-#include "hw/pci/pci.h"
-#include "hw/pci-host/gpex.h"
-#include "hw/display/ramfb.h"
-#include "hw/misc/crypto.h"
+    #include "chardev/char.h"
+    #include "sysemu/arch_init.h"
+    #include "sysemu/device_tree.h"
+    #include "sysemu/sysemu.h"
+    #include "hw/pci/pci.h"
+    #include "hw/pci-host/gpex.h"
+    #include "hw/display/ramfb.h"
++   #include "hw/misc/crypto.h"
 ```
 Then allocate memory space for the device.
 
