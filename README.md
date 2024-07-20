@@ -189,4 +189,4 @@ Until now we have practiced and learned:
 These steps are also helpful in creating the cryptographic kernel module which is explained here as follows.
 
 # SHA-256 Crypto Development
-Crypto core is prepared and access through Buildroot gives errors, we are currently working on this. Details will be added.
+Check the file SHA-256 Crypto Core Developement.md 
