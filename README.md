@@ -151,7 +151,7 @@ clean:
 
 **path-to-buildroot-kernel**: as an example, this path should be like the following: `/home/user/Desktop/buildroot/output/build/linux-6.6.36`  the user and the Linux version(on Buildroot) may be different on your project, so check it and modify accordingly.
 
-Save the Makefile file, and use again the `make` command on the shell so that you compile. Then you will see multiple files created including hello.ko specifically crosscompiled for our new Buildroot-Linux development environment running on RISC-V architecture. You might question how this kernel module hello.ko is loaded to our development environment. Here are the steps:
+Save the Makefile file, and use again the `make` command on the shell to compile. Then you will see multiple files created including hello.ko specifically crosscompiled for our new Buildroot-Linux development environment running on RISC-V architecture. You might question how this kernel module hello.ko is loaded to our development environment. Here are the steps:
 
 Go to `/buildroot`, inside create a directory named as you wish (or name it as `overlay` for compatibility), inside create another path (e.g.  `/home/driver`)
 
@@ -161,7 +161,7 @@ Then copy the kernel module 'hello.ko' to `overlay/home/driver` directory.
 
 This path is the path to your kernel header on your target environment.
 
-After doing this, inside `/qemu/buildroot` directory you need to run `make menuconfig` which opens a text-based GUI. Keep in mind that this interface works with a dependency, so run the following command to resolve it if you receive an error: `sudo apt-get install libncurses5-dev libncursesw5-dev`
+After doing this, inside `/buildroot` directory you need to run `make menuconfig` which opens a text-based GUI. Keep in mind that this interface works with a dependency, so run the following command to resolve it if you receive an error: ``sudo apt-get install libncurses5-dev libncursesw5-dev``
 
 
 **Configure Buildroot to Use the Overlay:** You need to tell Buildroot to use this overlay directory when building the root filesystem image. This can be done in the Buildroot configuration:
