@@ -380,6 +380,7 @@ softmmu_ss.add(when: 'CONFIG_FW_CFG_DMA', if_true: files('vmcoreinfo.c'))
 File: qemu/hw/riscv/Kconfig
 ```c
     select SERIAL
+```javascript {2,4-6}
     select SIFIVE_CLINT
     select SIFIVE_PLIC
     select SIFIVE_TEST
