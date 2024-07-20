@@ -335,8 +335,10 @@ DeviceState *sha_device_create(hwaddr addr) {
 
 
 ```
+
+
 Create the header file as well inside this directory qemu/include/hw/misc/crypto.h
-```
+```c
 #ifndef HW_CRYPTO_CORE_H
 #define HW_CRYPTO_CORE_H
 
@@ -350,6 +352,10 @@ void compression(uint32_t hashVal[], uint32_t w[]);
 #endif
 
 ```
+
+## QEMU File Configurations
+
+1.
 
 
 
