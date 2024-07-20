@@ -38,7 +38,7 @@ make
 
 The last make command might take a long time, possibly more than one hour since it compiles the entire kernel of the target system.
 
-After the kernel compilation command 'make' you will see the image files inside `/buildroot/output` directory path. Go to the `/images` directory and you will see the script named start-qemu.sh. You need to modify the directory inside this script to you qemu/build directory path. 
+After the kernel compilation command `make` you will see the image files inside `/buildroot/output/images` directory path. Go to the `/images` directory and you will see the script named start-qemu.sh. You need to modify the directory inside this script to you qemu/build directory path. 
 
 buildroot/output/images/start_qemu.sh file content: 
 ```c
