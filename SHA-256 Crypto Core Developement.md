@@ -354,6 +354,7 @@ void compression(uint32_t hashVal[], uint32_t w[]);
 ```
 
 # QEMU File Configurations
+We are creating a device that is located at the address 0x4000000 n the virtual address space, and with additional registers for various I/O operations. 
 
 ## 1. Kconfig Modification
 File: qemu/hw/misc/Kconfig
