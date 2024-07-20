@@ -425,9 +425,21 @@ static const MemMapEntry virt_memmap[] = {
 };
 ```
 
+The function sha_device_create(memmap[VIRT_SHA256_DEVICE].base); initializes the SHA-256 cryptographic device at the specified base memory address within the virtual machine.
 
+@@ -731,6 +733,9 @@ 
+ ```c  
+    /* SiFive Test MMIO device */
+    sifive_test_create(memmap[VIRT_TEST].base);
+    
+        /* SHA256_DEVICE */
++   sha_device_create(memmap[VIRT_SHA256_DEVICE].base);
+    
+    /* VirtIO MMIO devices */
+    for (i = 0; i < VIRTIO_COUNT; i++) {
+        sysbus_create_simple("virtio-mmio",
 
-
+```
 
 
 
