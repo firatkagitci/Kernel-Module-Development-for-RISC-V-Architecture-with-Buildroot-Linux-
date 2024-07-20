@@ -8,7 +8,7 @@ This project is done on an Ubuntu host (version 23.10) and in our case running o
 ## Installing QEMU
 The first step is installing Qemu from the git repository and beforehand make sure you have the necessary toolchains and dependencies:
 Installing dependencies:
-```
+```sh
 sudo apt-get update
 sudo apt-get install -y build-essential git ncurses-dev bison flex libssl-dev make gcc
 sudo apt install ninja-build
@@ -17,19 +17,19 @@ sudo apt-get install libglib2.0-dev
 sudo apt-get install libpixman-1-dev
 ```
 **Warning:** In case you still encounter any dependency errors which is highly possible, read the error messages and install the required dependent tools indicated in the errors.
-```
+```sh
 git clone https://github.com/qemu/qemu.git
 cd qemu
 git checkout v6.0.0
 ```
 Configure the system for risc-v architecture by the following command:
-```
+```sh
 ./configure --target-list=riscv64-softmmu
 make
 ```
 ## Installing Buildroot
 Then you have to install Buildroot separately, not inside QEMU.
-```
+```sh
 git clone https://github.com/buildroot/buildroot.git
 cd buildroot/
 make qemu_riscv64_virt_defconfig
@@ -74,7 +74,7 @@ exec qemu-system-riscv64 -M virt -bios fw_jump.elf -kernel Image -append "rootwa
 
 Kep in mind that every time you compile the buildroot, you need to change this file. But if you dont want to deal with this you can use the following command. 
 
-```
+```sh
 exec /Desktop/qemu/build/qemu-system-riscv64 -M virt -bios fw_jump.elf -kernel Image -append "rootwait root=/dev/vda ro" -drive file=rootfs.ext2,format=raw,id=hd0 -device virtio-blk-device,drive=hd0 -netdev user,id=net0 -device virtio-net-device,netdev=net0 -nographic  ${EXTRA_ARGS} "$@"
 ```
 
@@ -130,7 +130,7 @@ Keep in mind that just before `make` command inside this script there should be 
  ## Cross-Compiling Kernel Module For Buildroot Linux running on RISC-V:
 
 We have created a simple kernel module and executed it and this is a good practice to understand the kernel module development. We need to install cross-compilation tools to compile a kernel module for our target architecture RISC-V. The following command is used to install the required cross-compilation toolchain: 
- ```
+ ```sh
 sudo apt-get update
 sudo apt-get install gcc-riscv64-linux-gnu
 ```
@@ -138,7 +138,7 @@ sudo apt-get install gcc-riscv64-linux-gnu
 
  Inside, create the same hello.c, and create a new Makefile file. Inside the new Makefile write the following script:
 
-```
+```make
 obj-m += hello.o
 all:
 	make ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- -C <path-to-buildroot-kernel> M=$(PWD) modules
