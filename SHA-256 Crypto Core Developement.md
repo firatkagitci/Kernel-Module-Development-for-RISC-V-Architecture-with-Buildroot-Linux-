@@ -1,5 +1,8 @@
 ### SHA-256 Crypto Development
-The crypto core is developed for the SHA-256 algorithm and the implementation together with the tests are done. Various configurations should be written to qemu files, we have reported all of the details here. The crypto core do not contain only the sha256 algorithm but also many functions required for it to bee seen as a device inside qemu. This project is focused on writing a device driver, but the driver is developed for the crypto core that emulates the sha256 algortithm. The crypto core has a seperate memory addresses, and have many registerrs. the registers of crypto core is used for writing, reading, enabling and output operations. These registers are crucial for utilizing the crypto device.
+The crypto core is developed for the SHA-256 algorithm and the implementation together with the tests are done. Various configurations should be written to qemu files, we have reported all of the details here. The crypto core do not contain only the sha256 algorithm but also many functions required for it to bee seen as a device inside qemu. This project is focused on writing a device driver, but the driver is developed for the crypto core that emulates the sha256 algortithm. The crypto core has a seperate memory addresses, and have many registerrs. the registers of crypto core is used for writing, reading, enabling and output operations. These registers are crucial for utilizing the crypto device. The device will be a part of Qemu, causing the virtual machine seeing the device as a core connected to the system bus. 
+
+![image](https://github.com/user-attachments/assets/d5ccf832-4567-48ac-8216-8b89843842ce)
+
 
 Create a file qemu/hw/misc/crypto.c pasting the following code:
 
