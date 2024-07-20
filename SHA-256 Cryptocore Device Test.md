@@ -5,11 +5,11 @@ Now that we have developed the device in the previous steps, we need to test it 
 ### Write to the Device:
 Use the devmem command to write a value to a specific memory address.
 
-devmem <address> <width> <value>
+devmem address width value
 
-<address>: The memory address of the device register.
-<width>: The data width (8, 16, 32, or 64 bits).
-<value>: The value to write.
+address: The memory address of the device register.
+width: The data width (8, 16, 32, or 64 bits).
+value: The value to write.
 
 Example:
 
@@ -18,10 +18,10 @@ devmem 0x40000000 32 0x1
 ### Read from the Device:
 Use the devmem command to read a value from a specific memory address.
 
-devmem <address> <width>
+devmem address width
 
-<address>: The memory address of the device register.
-<width>: The data width (8, 16, 32, or 64 bits).
+address: The memory address of the device register.
+width: The data width (8, 16, 32, or 64 bits).
 
 Example:
 
