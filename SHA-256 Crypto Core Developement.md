@@ -405,6 +405,7 @@ Add the header file of cryypto core as shown below.
 ```
 Then allocate memory space for the device.
 
+@@ -55,6 +58,7 @@
 ```c
 static const MemMapEntry virt_memmap[] = {
     [VIRT_DEBUG] =       {        0x0,         0x100 },
