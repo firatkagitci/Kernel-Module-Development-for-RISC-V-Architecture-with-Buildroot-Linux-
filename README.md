@@ -55,7 +55,7 @@ This will boot the system with OpenSbi, and your Buildroot system will start. Th
 It is highly suggested that you start with a simple kernel module to test your system, in our case we will create a kernel module that gives a message as 'Hello World'. First, you test it on your host machine Ubuntu. Create a separate directory and name it as you wish (e.g. kmodules) and create the hello.c file `touch hello.c`.
 
 Simple kernel module 'hello.c':
-```
+```c
 #include <linux/module.h>
 #include <linux/kernel.h>
 
