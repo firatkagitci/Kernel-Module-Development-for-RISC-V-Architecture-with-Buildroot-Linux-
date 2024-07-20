@@ -387,3 +387,11 @@ File: qemu/hw/riscv/Kconfig
     select FW_CFG_DMA
     select SHA256_DEVICE
 ```
+
+
+<pre>
+<code class="python">
+def hello_world():
+    <span class="highlight">print("Hello, world!")</span>
+</code>
+</pre>
