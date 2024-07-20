@@ -385,6 +385,5 @@ File: qemu/hw/riscv/Kconfig
     select SIFIVE_TEST
     select VIRTIO_MMIO
     select FW_CFG_DMA
-```markdown
     select SHA256_DEVICE
 ```
