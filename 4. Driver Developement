@@ -1,2 +1,3 @@
 # Driver Developement
-Focusing on the device and its important input-output and enable registers, we have developed a custom driver for our SHA-256 crypto core device. In the first part of repository steps to cross compile a driver was explained already. After cross compilation add the file to the `buildroot\overlay\home\driver` directory so that you can upload the kernel module, the file with `.ko` extension to the buildroot developement environment.
+
+Focusing on the device and its important input-output and enable registers, we have developed a custom driver for our SHA-256 crypto core device. In the first part of repository steps to cross compile a driver was explained already. After cross compilation add the file to the `buildroot\overlay\home\driver` directory so that you can upload the kernel module, the file with `.ko` extension to the buildroot development environment.
