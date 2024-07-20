@@ -1,0 +1,1 @@
+A Linux device driver for SHA-256 crypto core in simulated RISC-V environment © 2024 by Fırat Kağıtçı, Yang Zeyu, Malaz, Barkey Demir, Shang Shanchong is licensed under CC BY-NC 4.0 
