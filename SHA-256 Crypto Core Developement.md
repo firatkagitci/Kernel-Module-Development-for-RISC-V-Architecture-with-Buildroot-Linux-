@@ -355,7 +355,7 @@ void compression(uint32_t hashVal[], uint32_t w[]);
 
 ## QEMU File Configurations
 
-# 1.Kconfig update
+# 1. Kconfig MOdification
 File: qemu/hw/misc/Kconfig
 ```c
 config ARMSSE_MHU
@@ -367,6 +367,12 @@ config ARMSSE_CPU_PWRCTRL
 config SHA256_DEVICE
     bool
 ```
+# 2. Meson Build Modification
 
-
+```build
+softmmu_ss.add(when: 'CONFIG_APPLESMC', if_true: files('applesmc.c'))
+softmmu_ss.add(when: 'CONFIG_SHA256_DEVICE', if_true: files('crypto.c'))
+softmmu_ss.add(when: 'CONFIG_EDU', if_true: files('edu.c'))
+softmmu_ss.add(when: 'CONFIG_FW_CFG_DMA', if_true: files('vmcoreinfo.c'))
+```
 
