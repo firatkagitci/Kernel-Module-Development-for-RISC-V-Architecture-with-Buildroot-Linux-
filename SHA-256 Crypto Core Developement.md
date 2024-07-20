@@ -388,10 +388,3 @@ File: qemu/hw/riscv/Kconfig
     select SHA256_DEVICE
 ```
 
-
-<pre>
-<code class="python">
-def hello_world():
-    <span class="highlight">print("Hello, world!")</span>
-</code>
-</pre>
