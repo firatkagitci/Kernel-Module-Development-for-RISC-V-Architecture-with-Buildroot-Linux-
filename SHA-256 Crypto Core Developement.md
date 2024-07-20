@@ -452,6 +452,12 @@ The function sha_device_create(memmap[VIRT_SHA256_DEVICE].base); initializes the
 
 ```
 
+After doing all these steps we need to configure and compile the qemu. 
+```
+./configure --target-list=riscv64-softmmu
+make
+```
 
+You should configure and compile the qemu every time you modify your crypto core, so that the modifications will be reflected to the buildroot environment. 
 
 
