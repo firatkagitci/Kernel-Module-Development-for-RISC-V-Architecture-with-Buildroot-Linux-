@@ -1,5 +1,5 @@
 # Kernel-Module-Development-for-RISC-V-Architecture-with-Buildroot-Linux
-This repository is prepared to explain how to create the development environment in our case Buildroot-Linux running on QEMU emulating RISC-V architecture, and an implementation of SHA-256 encryption algorithm integrated into a kernel module. We create a driver code on our Ubuntu host machine and use cross-compilation which is a toolchain you add to your host to translate the driver code you develop on your Ubuntu host to the target Buildroot-Linux as a kernel module. Buildroot is a simple, efficient tool for generating embedded Linux systems through cross-compilation. It's ideal for developing lightweight Linux versions for resource-constrained embedded devices. Keep in mind we do not create the kernel module on target Buildroot since it does not provide compilation tools due to its lightweight nature.
+This repository is prepared to explain how to create the development environment in our case Buildroot-Linux running with QEMU emulating RISC-V architecture, and an implementation of SHA-256 encryption algorithm integrated into a kernel module. We developed a driver code on our Ubuntu host machine and used cross-compilation which is a toolchain you add to your host to translate the driver code you develop on your Ubuntu host to the target Buildroot-Linux as a kernel module. Buildroot is a simple, efficient tool for generating embedded Linux systems through cross-compilation. It's ideal for developing lightweight Linux versions for resource-constrained embedded devices. Keep in mind we do not create the kernel module on target Buildroot since it does not provide compilation tools due to its lightweight nature.
 
 As a prerequisite, the person who reads this repository should be familiar with operating systems fundamentals and especially the basic theory of kernel modules.
 
@@ -28,7 +28,7 @@ Configure the system for risc-v architecture by the following command:
 make
 ```
 ## Installing Buildroot
-Then you have to install Buildroot to the QEMU, you should be inside /qemu directory. 
+Then you have to install Buildroot separately, not inside QEMU.
 ```
 git clone https://github.com/buildroot/buildroot.git
 cd buildroot/
