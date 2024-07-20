@@ -189,4 +189,4 @@ Until now we have practiced and learned:
 These steps are also helpful in creating the cryptographic kernel module which is explained here as follows.
 
 # SHA-256 Crypto Development
-Check the file SHA-256 Crypto Core Developement.md Markdown file that include through explanation.
+Check the file SHA-256 Crypto Core Developement.md Markdown file that include thorough explanation.
