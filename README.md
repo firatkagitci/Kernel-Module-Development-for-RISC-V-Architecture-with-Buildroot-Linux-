@@ -155,20 +155,20 @@ Save the Makefile file, and use again the `make` command on the shell to compile
 
 Go to `/buildroot`, inside create a directory named as you wish (or name it as `overlay` for compatibility), inside create another path (e.g.  `/home/driver`)
 
-Shortly, use this: ```mkdir -p overlay/home/driver ``` The -p flag ensures that mkdir creates all necessary parent directories that do not exist.
+Shortly, use this: `mkdir -p overlay/home/driver ``` The -p flag ensures that mkdir creates all necessary parent directories that do not exist.
 
 Then copy the kernel module 'hello.ko' to `overlay/home/driver` directory.
 
 This path is the path to your kernel header on your target environment.
 
-After doing this, inside `/buildroot` directory you need to run `make menuconfig` which opens a text-based GUI. Keep in mind that this interface works with a dependency, so run the following command to resolve it if you receive an error: ``sudo apt-get install libncurses5-dev libncursesw5-dev``
+After doing this, inside `/buildroot` directory you need to run `make menuconfig` which opens a text-based GUI. Keep in mind that this interface works with a dependency, so run the following command to resolve it if you receive an error: `sudo apt-get install libncurses5-dev libncursesw5-dev`
 
 
 **Configure Buildroot to Use the Overlay:** You need to tell Buildroot to use this overlay directory when building the root filesystem image. This can be done in the Buildroot configuration:
 
-Run `make menuconfig ` within your Buildroot directory.
-**Navigate to System configuration > Root filesystem overlay directories.**
-Add the path to your `overlay` directory. If you named your directory overlay and it's located in the root of your Buildroot directory, the path would simply be overlay.
+After running `make menuconfig ` within your Buildroot directory;
+Navigate to **System configuration > Root filesystem overlay directories.**
+Write 'overlay' to the blank space. 
 Save and exit the configuration menu.
 ![menuconfig1](https://github.com/firatkagitci/Kernel-Module-Development-for-RISC-V-Architecture-with-Buildroot-Linux-/assets/72497084/4368e505-9d40-4866-a591-3cab16dcd5db)
 
