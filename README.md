@@ -29,7 +29,7 @@ make
 ```
 ## Installing Buildroot
 Then you have to install Buildroot separately, not inside QEMU.
-```
+```ruby
 git clone https://github.com/buildroot/buildroot.git
 cd buildroot/
 make qemu_riscv64_virt_defconfig
