@@ -369,7 +369,7 @@ config SHA256_DEVICE
 ```
 # 2. Meson Build Modification
 
-```build
+```c
 softmmu_ss.add(when: 'CONFIG_APPLESMC', if_true: files('applesmc.c'))
 softmmu_ss.add(when: 'CONFIG_SHA256_DEVICE', if_true: files('crypto.c'))
 softmmu_ss.add(when: 'CONFIG_EDU', if_true: files('edu.c'))
