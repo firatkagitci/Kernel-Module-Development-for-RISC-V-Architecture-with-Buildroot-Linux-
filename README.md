@@ -176,13 +176,13 @@ Save and exit the configuration menu.
 
 Then run `make` inside `/buildroot`. Every time when you add a new file to the overlay directory, you need to recompile the buildroot so that you will see the changes in the buildroot.
 
-To see if the kernel module is loaded to Buildroot, start the Buildroot by executing the command `./start-qemu.sh` inside `/buildroot/output/images/ `. then the Buildroot system will start, you need to check the directory `/lib/modules/6.1.44/extra/`, there you should see the loaded kernel module. You can insert this kernel module to the running kernel by using `insmod hello.ko` command, then if you use `dmesg` command you will see as an output the "Hello, World!" message. This means you have successfully cross-compiled a kernel module, added it to your target system, and then inserted it into the running kernel. 
+To see if the kernel module is loaded to Buildroot, start the Buildroot by executing the command `./start-qemu.sh` inside `/buildroot/output/images/ `. then the Buildroot system will start, you need to check the directory `/home/driver`, there you should see the loaded kernel module. You can insert this kernel module (hello.ko) to the running kernel by using `insmod hello.ko` command, then if you use `dmesg` command you will see as an output the "Hello, World!" message. This means you have successfully cross-compiled a kernel module, added it to your target system, and then inserted it into the running kernel. 
 
 ![kernel_module_cross_compiled](https://github.com/firatkagitci/Kernel-Module-Development-for-RISC-V-Architecture-with-Buildroot-Linux-/assets/72497084/e25b7ad9-6226-4dbb-8c17-88be071d1b51)
 
 Until now we have practiced and learned:
 - How to set the development environment Buildroot-Linux running on RISC-V architecture
-- How to create a kernel module
+- How to create a simple kernel module
 - How to cross-compile a kernel module
 - Adding the kernel module to the target system of Buildroot-Linux running on RISC-V architecture
 
