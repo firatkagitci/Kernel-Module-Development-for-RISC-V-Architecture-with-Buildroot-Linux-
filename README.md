@@ -8,7 +8,7 @@ This project is done on an Ubuntu host (version 23.10) and in our case running o
 ## Installing QEMU
 The first step is installing Qemu from the git repository and beforehand make sure you have the necessary toolchains and dependencies:
 Installing dependencies:
-```sh
+```console
 sudo apt-get update
 sudo apt-get install -y build-essential git ncurses-dev bison flex libssl-dev make gcc
 sudo apt install ninja-build
@@ -17,19 +17,19 @@ sudo apt-get install libglib2.0-dev
 sudo apt-get install libpixman-1-dev
 ```
 **Warning:** In case you still encounter any dependency errors which is highly possible, read the error messages and install the required dependent tools indicated in the errors.
-```sh
+```console
 git clone https://github.com/qemu/qemu.git
 cd qemu
 git checkout v6.0.0
 ```
 Configure the system for risc-v architecture by the following command:
-```sh
+```console
 ./configure --target-list=riscv64-softmmu
 make
 ```
 ## Installing Buildroot
 Then you have to install Buildroot separately, not inside QEMU.
-```sh
+```console
 git clone https://github.com/buildroot/buildroot.git
 cd buildroot/
 make qemu_riscv64_virt_defconfig
@@ -130,7 +130,7 @@ Keep in mind that just before `make` command inside this script there should be 
  ## Cross-Compiling Kernel Module For Buildroot Linux running on RISC-V:
 
 We have created a simple kernel module and executed it and this is a good practice to understand the kernel module development. We need to install cross-compilation tools to compile a kernel module for our target architecture RISC-V. The following command is used to install the required cross-compilation toolchain: 
- ```sh
+ ```console
 sudo apt-get update
 sudo apt-get install gcc-riscv64-linux-gnu
 ```
