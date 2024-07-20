@@ -115,7 +115,7 @@ module_exit(hello_cleanup);
 ```
 To compile the hello.c code we need to use a Makefile file that includes the following script: 
 
-```
+```make
 obj-m += hello.o
 all:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
