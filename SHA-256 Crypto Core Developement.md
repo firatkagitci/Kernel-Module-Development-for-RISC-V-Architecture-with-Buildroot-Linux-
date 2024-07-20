@@ -378,7 +378,7 @@ File: qemu/hw/misc/meson.build
 
 ## 3. Modify Kconfig of Risc-V
 File: qemu/hw/riscv/Kconfig
-```c
+```c #5
     select SERIAL
     select SIFIVE_CLINT
     select SIFIVE_PLIC
@@ -387,5 +387,6 @@ File: qemu/hw/riscv/Kconfig
     select FW_CFG_DMA
 +   select SHA256_DEVICE
 ```
+
 
 
