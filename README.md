@@ -130,7 +130,7 @@ Keep in mind that just before `make` command (inside Makefile) there should be a
 
  ## Cross-Compiling Kernel Module For Buildroot Linux running on RISC-V:
 
-We have created a simple kernel module and executed it and this is a good practice to understand the kernel module development. We need to install cross-compilation tools to compile a kernel module for our target architecture RISC-V. The following command is used to install the required cross-compilation toolchain: 
+We have created a simple kernel module and executed it, this is a good practice to understand the kernel module development. We need to install cross-compilation tools to compile a kernel module for our target architecture RISC-V. The following command is used to install the required cross-compilation toolchain: 
  ```console
 sudo apt-get update
 sudo apt-get install gcc-riscv64-linux-gnu
@@ -149,13 +149,13 @@ clean:
 
  ```
 
-**path-to-buildroot-kernel**: as an example, this path should be like the following: `/home/user/Desktop/buildroot/output/build/linux-6.6.36`  the user and the Linux version(on Buildroot) may be different on your project, so check it and modify accordingly.
+**path-to-buildroot-kernel**: As an example, this path should be like the following: `/home/user/Desktop/buildroot/output/build/linux-6.6.36`  the user and the Linux version(on Buildroot) may be different on your project, so check it and modify accordingly.
 
 Save the Makefile file, and use again the `make` command on the shell to compile. Then you will see multiple files created including hello.ko specifically crosscompiled for our new Buildroot-Linux development environment running on RISC-V architecture. You might question how this kernel module hello.ko is loaded to our development environment. Here are the steps:
 
 Go to `/buildroot`, inside create a directory named as you wish (or name it as `overlay` for compatibility), inside create another path (e.g.  `/home/driver`)
 
-`mkdir -p overlay/home/driver ` The -p flag ensures that mkdir creates all necessary parent directories that do not exist.
+Shortly, use this: ```mkdir -p overlay/home/driver ``` The -p flag ensures that mkdir creates all necessary parent directories that do not exist.
 
 Then copy the kernel module 'hello.ko' to `overlay/home/driver` directory.
 
