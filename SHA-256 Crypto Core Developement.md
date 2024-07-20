@@ -1,5 +1,5 @@
 ## SHA-256 Crypto Development
-The crypto core is developed for the SHA-256 algorithm and the implementation together with the tests are done. Various configurations should be written to qemu files, we have reported all of the details here. The crypto core do not contain only the sha256 algorithm but also many functions required for it to bee seen as a device inside qemu. This project is focused on writing a device driver, but the driver is developed for the crypto core that emulates the sha256 algortithm. The crypto core has a seperate memory addresses, and have many registerrs. the registers of crypto core is used for writing, reading, enabling and output operations. 
+The crypto core is developed for the SHA-256 algorithm and the implementation together with the tests are done. Various configurations should be written to qemu files, we have reported all of the details here. The crypto core do not contain only the sha256 algorithm but also many functions required for it to bee seen as a device inside qemu. This project is focused on writing a device driver, but the driver is developed for the crypto core that emulates the sha256 algortithm. The crypto core has a seperate memory addresses, and have many registerrs. the registers of crypto core is used for writing, reading, enabling and output operations. These registers are crucial for utilizing the crypto device.
 
 Create a file qemu/hw/misc/crypto.c pasting the following code:
 
@@ -335,4 +335,21 @@ DeviceState *sha_device_create(hwaddr addr) {
 
 
 ```
+Create the header file as well inside this directory qemu/include/hw/misc/crypto.h
+```
+#ifndef HW_CRYPTO_CORE_H
+#define HW_CRYPTO_CORE_H
+
+#include "qom/object.h"
+
+DeviceState *sha_device_create(hwaddr);
+int perform_sha256_hashing(char *inputStr);
+void encodeMessageBlock(char* inStr, unsigned char messageBlock[], const int inSize, const int messageBlockSize);
+void messageSchedule(int chunkIndex, unsigned char** chunks, int numChunks, uint32_t w[]);
+void compression(uint32_t hashVal[], uint32_t w[]);
+#endif
+
+```
+
+
 
