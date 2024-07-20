@@ -1,2 +1,3 @@
 ## SHA-256 Crypto Development
-Crypto core is prepared and access through Buildroot gives errors, we are currently working on this. Details will be added.
+The crypto core is developed for the SHA-256 algorithm and the implementation together with the tests are done. VArious configurations should be written to qemu files, we have reported all of the details here. 
+
