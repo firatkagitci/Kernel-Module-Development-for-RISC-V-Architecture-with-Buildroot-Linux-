@@ -388,5 +388,23 @@ File: qemu/hw/riscv/Kconfig
 +   select SHA256_DEVICE
 ```
 
+## 4. Modify virt.c (Risc-V Virtual Machine Configuration)
+File: qemu/hw/riscv/virt.c
+Add the header file of cryypto core as shown below.
+
+```c
+
+#include "chardev/char.h"
+#include "sysemu/arch_init.h"
+#include "sysemu/device_tree.h"
+#include "sysemu/sysemu.h"
+#include "hw/pci/pci.h"
+#include "hw/pci-host/gpex.h"
+#include "hw/display/ramfb.h"
+#include "hw/misc/crypto.h"
+```
+
+
+
 
 
