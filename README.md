@@ -8,7 +8,7 @@ This project is done on an Ubuntu host (version 23.10) and in our case running o
 ## Installing QEMU
 The first step is installing Qemu from the git repository and beforehand make sure you have the necessary toolchains and dependencies:
 Installing dependencies:
-```ruby
+```bash
 sudo apt-get update
 sudo apt-get install -y build-essential git ncurses-dev bison flex libssl-dev make gcc
 sudo apt install ninja-build
