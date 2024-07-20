@@ -72,6 +72,12 @@ fi
 exec qemu-system-riscv64 -M virt -bios fw_jump.elf -kernel Image -append "rootwait root=/dev/vda ro" -drive file=rootfs.ext2,format=raw,id=hd0 -device virtio-blk-device,drive=hd0 -netdev user,id=net0 -device virtio-net-device,netdev=net0 -nographic  ${EXTRA_ARGS} "$@"
 ```
 
+Kep in mind that every time you compile the buildroot, you need to change this file. But if you dont want to deal with this you can use the following command. 
+
+```
+exec /Desktop/qemu/build/qemu-system-riscv64 -M virt -bios fw_jump.elf -kernel Image -append "rootwait root=/dev/vda ro" -drive file=rootfs.ext2,format=raw,id=hd0 -device virtio-blk-device,drive=hd0 -netdev user,id=net0 -device virtio-net-device,netdev=net0 -nographic  ${EXTRA_ARGS} "$@"
+```
+
 adding ./ to the beginning: `./start-qemu.sh`
 
 This will boot the system with OpenSbi, and your Buildroot system will start. The password is 'root' and keep in mind that this system does not have a GUI(Graphical User Interface), meaning you will have to use the command line to interact with the new system we just created. The password: root.
@@ -132,7 +138,7 @@ sudo apt-get install gcc-riscv64-linux-gnu
 
  Inside, create the same hello.c, and create a new Makefile file. Inside the new Makefile write the following script:
 
-```c
+```
 obj-m += hello.o
 all:
 	make ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- -C <path-to-buildroot-kernel> M=$(PWD) modules
