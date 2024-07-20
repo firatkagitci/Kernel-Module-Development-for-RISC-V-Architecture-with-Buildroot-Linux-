@@ -358,34 +358,34 @@ void compression(uint32_t hashVal[], uint32_t w[]);
 ## 1. Kconfig Modification
 File: qemu/hw/misc/Kconfig
 ```c
-config ARMSSE_MHU
-    bool
+    config ARMSSE_MHU
+        bool
 
-config ARMSSE_CPU_PWRCTRL
-    bool
-    
-config SHA256_DEVICE
-    bool
+    config ARMSSE_CPU_PWRCTRL
+        bool
+        
++   config SHA256_DEVICE
+        bool
 ```
-## 2. Meson Build Modification
+## 2. Modify Meson Build
 File: qemu/hw/misc/meson.build
 ```c
-softmmu_ss.add(when: 'CONFIG_APPLESMC', if_true: files('applesmc.c'))
-softmmu_ss.add(when: 'CONFIG_SHA256_DEVICE', if_true: files('crypto.c'))
-softmmu_ss.add(when: 'CONFIG_EDU', if_true: files('edu.c'))
-softmmu_ss.add(when: 'CONFIG_FW_CFG_DMA', if_true: files('vmcoreinfo.c'))
+    softmmu_ss.add(when: 'CONFIG_APPLESMC', if_true: files('applesmc.c'))
++   softmmu_ss.add(when: 'CONFIG_SHA256_DEVICE', if_true: files('crypto.c'))
+    softmmu_ss.add(when: 'CONFIG_EDU', if_true: files('edu.c'))
+    softmmu_ss.add(when: 'CONFIG_FW_CFG_DMA', if_true: files('vmcoreinfo.c'))
 ```
 
 ## 3. Modify Kconfig of Risc-V
 File: qemu/hw/riscv/Kconfig
 ```c
     select SERIAL
-```javascript {2,4-6}
     select SIFIVE_CLINT
     select SIFIVE_PLIC
     select SIFIVE_TEST
     select VIRTIO_MMIO
     select FW_CFG_DMA
-    select SHA256_DEVICE
++   select SHA256_DEVICE
 ```
+
 
