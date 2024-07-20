@@ -132,7 +132,7 @@ sudo apt-get install gcc-riscv64-linux-gnu
 
  Inside, create the same hello.c, and create a new Makefile file. Inside the new Makefile write the following script:
 
-```
+```cmake
 obj-m += hello.o
 all:
 	make ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- -C <path-to-buildroot-kernel> M=$(PWD) modules
