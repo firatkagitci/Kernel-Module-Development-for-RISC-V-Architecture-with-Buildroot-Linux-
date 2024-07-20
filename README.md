@@ -66,7 +66,7 @@ else
 fi
 
 if ! ${mode_sys_qemu}; then
-    export PATH="/home/asdf/Desktop/qemu/build:${PATH}"   ## MODIFY THIS LINE TO QEMU/BUILD
+    export PATH="/home/asdf/Desktop/qemu/build:${PATH}"   # MODIFY THIS LINE TO QEMU/BUILD
 fi
 
 exec qemu-system-riscv64 -M virt -bios fw_jump.elf -kernel Image -append "rootwait root=/dev/vda ro" -drive file=rootfs.ext2,format=raw,id=hd0 -device virtio-blk-device,drive=hd0 -netdev user,id=net0 -device virtio-net-device,netdev=net0 -nographic  ${EXTRA_ARGS} "$@"
