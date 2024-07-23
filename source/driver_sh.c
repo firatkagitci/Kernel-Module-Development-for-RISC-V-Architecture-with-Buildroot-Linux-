@@ -10,7 +10,7 @@
 #define CLASS_NAME "sha"
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Author");
+MODULE_AUTHOR("Firat Kagitci");
 MODULE_DESCRIPTION("A Linux kernel module for a SHA256 hardware accelerator");
 MODULE_VERSION("0.1");
 
